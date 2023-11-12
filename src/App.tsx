@@ -1,9 +1,11 @@
-import "./App.scss";
+import "./app.scss";
 
 function App() {
   return (
     <div>
-      <section>Hero</section>
+      <section>
+        <a>hello</a>
+      </section>
       <section>Parallax</section>
       <section>Services</section>
       <section>Parallax</section>
