@@ -18,15 +18,18 @@
       gap: 40px;
 
       h2 {
+        z-index: 999;
         font-size: 30px;
         color: rebeccapurple;
         letter-spacing: 10px;
       }
       h1 {
+        z-index: 999;
         font-size: 88px;
       }
 
       .buttons {
+        z-index: 999;
         button {
           padding: 20px;
           border: 1px solid white;
@@ -66,5 +69,6 @@
     color: #ffffff09;
     width: 50%;
     font-weight: bold;
+    user-select: none;
   }
 }

@@ -90,10 +90,7 @@ const Hero = () => {
       <div className="imageContainer">
         <motion.img
           variants={heroVariants}
-          // initial="offscreen"
-          // whileInView="onscreen"
           whileHover={"onhover"}
-          // viewport={{ once: true, amount: 0.8 }}
           src="/hero.png"
           alt="heroIcon"
         />
