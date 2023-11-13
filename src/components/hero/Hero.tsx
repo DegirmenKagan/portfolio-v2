@@ -28,6 +28,9 @@ const textVariants: Variants = {
   ontap: {
     scale: 0.95,
   },
+  namehover: {
+    letterSpacing: "3px",
+  },
 };
 const heroVariants: Variants = {
   onhover: {
@@ -66,7 +69,9 @@ const Hero = () => {
           initial="initial"
           animate="animate"
         >
-          <motion.h2 variants={textVariants}>KAĞAN DEĞİRMEN</motion.h2>
+          <motion.h2 variants={textVariants} whileHover={"namehover"}>
+            KAĞAN DEĞİRMEN
+          </motion.h2>
           <motion.h1 variants={textVariants}>Frontend Developer</motion.h1>
           <motion.h3 variants={textVariants}>
             and also Youtube Content Creator
