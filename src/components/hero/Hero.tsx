@@ -1,4 +1,3 @@
-import React from "react";
 import "./hero.scss";
 import { Variants, motion } from "framer-motion";
 
@@ -77,7 +76,7 @@ const Hero = () => {
       </motion.div>
 
       <div className="imageContainer">
-        <img src="/hero.png" />
+        <img src="/hero.png" alt="heroIcon" />
       </div>
     </div>
   );

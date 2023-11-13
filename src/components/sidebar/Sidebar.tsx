@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./sidebar.scss";
 import Links from "./links/Links";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import ToggleButton from "./toggleButton/ToggleButton";
 
-const variants = {
+const variants: Variants = {
   open: {
     clipPath: "circle(1200px at 50px 50px)",
     transition: {

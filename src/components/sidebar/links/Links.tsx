@@ -1,7 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 
-const variants = {
+const variants: Variants = {
   open: {
     transition: {
       staggerChildren: 0.1,
@@ -15,7 +14,7 @@ const variants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   open: {
     y: 0,
     opacity: 1,
