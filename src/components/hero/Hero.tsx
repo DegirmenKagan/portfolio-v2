@@ -22,6 +22,12 @@ const textVariants: Variants = {
       repeat: Infinity,
     },
   },
+  onhover: {
+    scale: 1.1,
+  },
+  ontap: {
+    scale: 0.95,
+  },
 };
 const heroVariants: Variants = {
   onhover: {
@@ -45,7 +51,7 @@ const sliderVariants: Variants = {
     transition: {
       repeat: Infinity,
       repeatType: "mirror",
-      duration: 20,
+      duration: 40,
     },
   },
 };
@@ -61,14 +67,25 @@ const Hero = () => {
           animate="animate"
         >
           <motion.h2 variants={textVariants}>KAĞAN DEĞİRMEN</motion.h2>
-          <motion.h1 variants={textVariants}>
-            Frontend Developer and Youtube Content Creator
-          </motion.h1>
+          <motion.h1 variants={textVariants}>Frontend Developer</motion.h1>
+          <motion.h3 variants={textVariants}>
+            and also Youtube Content Creator
+          </motion.h3>
           <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants}>
+            <motion.button
+              variants={textVariants}
+              whileHover={"onhover"}
+              whileTap={"ontap"}
+            >
               See the Latest Works
             </motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+            <motion.button
+              variants={textVariants}
+              whileHover={"onhover"}
+              whileTap={"ontap"}
+            >
+              Contact Me
+            </motion.button>
           </motion.div>
           <motion.img
             variants={textVariants}
@@ -84,7 +101,7 @@ const Hero = () => {
         initial="initial"
         animate="animate"
       >
-        Developer Content Creator Photographer Artist
+        Developer, Video Editor, Photographer, Artist
       </motion.div>
 
       <div className="imageContainer">
