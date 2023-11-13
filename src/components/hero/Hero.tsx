@@ -113,7 +113,7 @@ const Hero = () => {
         <motion.img
           variants={heroVariants}
           whileHover={"onhover"}
-          src="/hero.png"
+          src="/hero.webp"
           alt="heroIcon"
         />
       </div>
