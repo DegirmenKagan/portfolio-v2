@@ -1,8 +1,16 @@
-import React from "react";
 import "./navbar.scss";
 import { Constants } from "../../Constants";
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 import Sidebar from "../sidebar/Sidebar";
+
+const butVariant: Variants = {
+  onhover: {
+    scale: 2,
+  },
+  ontap: {
+    scale: 1.3,
+  },
+};
 
 const Navbar = () => {
   return (
@@ -14,18 +22,36 @@ const Navbar = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
         >
-          degirmenkagan
+          degirmenkagan.dev
         </motion.span>
         <div className="social">
-          <a href={Constants.instagram} target="_blank">
+          <motion.a
+            whileHover={"onhover"}
+            whileTap={"ontap"}
+            variants={butVariant}
+            href={Constants.instagram}
+            target="_blank"
+          >
             <img src="/instagram.png" alt="instagram" />
-          </a>
-          <a href={Constants.youtube} target="_blank">
+          </motion.a>
+          <motion.a
+            whileHover={"onhover"}
+            whileTap={"ontap"}
+            variants={butVariant}
+            href={Constants.youtube}
+            target="_blank"
+          >
             <img src="/youtube.png" alt="youtube" />
-          </a>
-          <a href={Constants.linkedin} target="_blank">
+          </motion.a>
+          <motion.a
+            whileHover={"onhover"}
+            whileTap={"ontap"}
+            variants={butVariant}
+            href={Constants.linkedin}
+            target="_blank"
+          >
             <img src="/linkedin.png" alt="linkedin" />
-          </a>
+          </motion.a>
         </div>
       </div>
     </div>
