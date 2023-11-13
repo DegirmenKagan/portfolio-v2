@@ -49,6 +49,13 @@
     position: absolute;
     top: 0;
     right: 0;
+
+    img {
+      margin-right: 20vh;
+      height: 100vh;
+      margin-top: 10vh;
+      scale: 0.9;
+    }
   }
 
   .slidingTextContainer {

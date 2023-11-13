@@ -23,6 +23,18 @@ const textVariants: Variants = {
     },
   },
 };
+const heroVariants: Variants = {
+  onhover: {
+    scale: 1.1,
+    y: -70,
+    rotate: -3,
+    transition: {
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
 
 const sliderVariants: Variants = {
   initial: {
@@ -50,7 +62,7 @@ const Hero = () => {
         >
           <motion.h2 variants={textVariants}>KAĞAN DEĞİRMEN</motion.h2>
           <motion.h1 variants={textVariants}>
-            Frontend developer and Youtube content creator
+            Frontend Developer and Youtube Content Creator
           </motion.h1>
           <motion.div variants={textVariants} className="buttons">
             <motion.button variants={textVariants}>
@@ -76,7 +88,15 @@ const Hero = () => {
       </motion.div>
 
       <div className="imageContainer">
-        <img src="/hero.png" alt="heroIcon" />
+        <motion.img
+          variants={heroVariants}
+          // initial="offscreen"
+          // whileInView="onscreen"
+          whileHover={"onhover"}
+          // viewport={{ once: true, amount: 0.8 }}
+          src="/hero.png"
+          alt="heroIcon"
+        />
       </div>
     </div>
   );
