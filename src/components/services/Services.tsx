@@ -34,7 +34,9 @@ const Services = () => {
     >
       <motion.div className="textContainer" variants={variants}>
         <p>
-          I focus on helping your brand grow <br /> and move forward
+          <i>
+            I aim to help your brand grow <br /> and take firm steps forward
+          </i>
         </p>
         <hr />
       </motion.div>
@@ -50,7 +52,9 @@ const Services = () => {
             <motion.b whileHover={{ color: "orange" }}>For Your</motion.b>
             Business
           </h1>
-          <button>What I Do?</button>
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            What I Do?
+          </motion.button>
         </div>
       </motion.div>
       <motion.div className="listContainer" variants={variants}>
