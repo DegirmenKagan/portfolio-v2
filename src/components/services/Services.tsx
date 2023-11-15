@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import "./services.scss";
 import { Variants, motion, useInView } from "framer-motion";
+import { Constants } from "../../Constants";
 
 const variants: Variants = {
   initial: {
@@ -39,7 +40,7 @@ const Services = () => {
       </motion.div>
       <motion.div className="titleContainer" variants={variants}>
         <div className="title">
-          <img src="/people.webp" alt="people" />
+          <img src={`${Constants.imagePath}/people.webp`} alt="people" />
           <h1>
             <motion.b whileHover={{ color: "orange" }}>Unique</motion.b>Ideas
           </h1>

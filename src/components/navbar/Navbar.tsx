@@ -33,7 +33,7 @@ const Navbar = () => {
             href={Constants.instagram}
             target="_blank"
           >
-            <img src="/instagram.png" alt="instagram" />
+            <img src={`${Constants.imagePath}/instagram.png`} alt="instagram" />
           </motion.a>
           <motion.a
             whileHover={"onhover"}
@@ -42,7 +42,7 @@ const Navbar = () => {
             href={Constants.youtube}
             target="_blank"
           >
-            <img src="/youtube.png" alt="youtube" />
+            <img src={`${Constants.imagePath}/youtube.png`} alt="youtube" />
           </motion.a>
           <motion.a
             whileHover={"onhover"}
@@ -51,7 +51,7 @@ const Navbar = () => {
             href={Constants.linkedin}
             target="_blank"
           >
-            <img src="/linkedin.png" alt="linkedin" />
+            <img src={`${Constants.imagePath}/linkedin.png`} alt="linkedin" />
           </motion.a>
         </div>
       </div>

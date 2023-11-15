@@ -1,3 +1,4 @@
+import { Constants } from "../../Constants";
 import "./hero.scss";
 import { Variants, motion } from "framer-motion";
 
@@ -95,7 +96,7 @@ const Hero = () => {
           <motion.img
             variants={textVariants}
             animate="scrollButton"
-            src="/scroll.png"
+            src={`${Constants.imagePath}/scroll.png`}
             alt="scrollIcon"
           />
         </motion.div>
@@ -113,7 +114,7 @@ const Hero = () => {
         <motion.img
           variants={heroVariants}
           whileHover={"onhover"}
-          src="/hero.webp"
+          src={`${Constants.imagePath}/hero.webp`}
           alt="heroIcon"
         />
       </div>

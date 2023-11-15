@@ -3,4 +3,5 @@ export var Constants = {
   youtube: "https://www.youtube.com/@Filmiyorum",
   linkedin: "https://www.linkedin.com/in/degirmenkagan/",
   instagram: "https://www.instagram.com/kagifer/",
+  imagePath: "/images",
 };

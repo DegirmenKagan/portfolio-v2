@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import "./parallax.scss";
 import { useRef } from "react";
+import { Constants } from "../../Constants";
 type IProps = {
   type: string;
 };
@@ -34,7 +35,9 @@ const Parallax = (props: IProps) => {
         style={{
           y: yBg,
           backgroundImage: `url(${
-            props.type === "services" ? "/planets.png" : "/sun.png"
+            props.type === "services"
+              ? `${Constants.imagePath}/planets.png`
+              : `${Constants.imagePath}/sun.png`
           })`,
         }}
       ></motion.div>
