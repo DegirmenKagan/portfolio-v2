@@ -66,6 +66,13 @@
           width: 200px;
           cursor: pointer;
         }
+
+        button:disabled,
+        button[disabled] {
+          background-color: gray;
+          color: black;
+          cursor: not-allowed;
+        }
       }
     }
   }

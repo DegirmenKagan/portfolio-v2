@@ -27,7 +27,7 @@ interface IPortfolioItem {
   desc?: string;
   link?: string;
 }
-const Single: React.FC<IPortfolioItem> = ({ title, img, desc }) => {
+const Single: React.FC<IPortfolioItem> = ({ title, img, desc, link }) => {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -45,7 +45,12 @@ const Single: React.FC<IPortfolioItem> = ({ title, img, desc }) => {
           <motion.div className="textContainer" style={{ y }}>
             <h2>{title}</h2>
             <p>{desc}</p>
-            <button>See Demo</button>
+            <button
+              disabled={link == undefined}
+              onClick={() => window.open(link, "_blank")}
+            >
+              See Demo
+            </button>
           </motion.div>
         </div>
       </div>
