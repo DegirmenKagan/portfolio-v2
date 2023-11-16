@@ -41,12 +41,12 @@ const Contact = () => {
           "StZj3lTyUyM18b1xE"
         )
         .then(
-          (result) => {
+          (_result) => {
             setSuccess(true);
             setError(false);
             setLoading(false);
           },
-          (error) => {
+          (_error) => {
             setSuccess(false);
             setError(true);
             setLoading(false);
