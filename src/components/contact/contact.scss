@@ -29,6 +29,7 @@
       stroke: orange;
       position: absolute;
       margin: auto;
+      z-index: -1;
     }
 
     form {
@@ -51,6 +52,13 @@
         background-color: orange;
         cursor: pointer;
         font-weight: 500;
+      }
+
+      button:disabled,
+      button[disabled] {
+        background-color: gray;
+        color: black;
+        cursor: progress;
       }
     }
   }
