@@ -1,7 +1,7 @@
-import React, { RefObject, useRef } from "react";
+import React, { useRef } from "react";
 import "./portfolio.scss";
 import { Constants } from "../../Constants";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const items: IPortfolioItem[] = [
   {
@@ -27,8 +27,30 @@ interface IPortfolioItem {
   desc?: string;
   link?: string;
 }
-const Single: React.FC<IPortfolioItem> = ({ title }) => {
-  return <section>{title}</section>;
+const Single: React.FC<IPortfolioItem> = ({ title, img, desc }) => {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+  return (
+    <section>
+      <div className="container">
+        <div className="wrapper">
+          <div className="imageContainer" ref={ref}>
+            <img src={img} alt={`${title}_img`} />
+          </div>
+          <motion.div className="textContainer" style={{ y }}>
+            <h2>{title}</h2>
+            <p>{desc}</p>
+            <button>See Demo</button>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 const Portfolio = () => {
