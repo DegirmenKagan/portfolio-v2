@@ -2,6 +2,8 @@ import { useRef } from "react";
 import "./services.scss";
 import { Variants, motion, useInView } from "framer-motion";
 import { Constants } from "../../Constants";
+import ServicesListItem from "./ServicesListItem";
+import { serviceList } from "./ServiceData";
 
 const variants: Variants = {
   initial: {
@@ -30,7 +32,7 @@ const Services = () => {
       variants={variants}
       initial="initial"
       ref={ref}
-      animate={"animate"}
+      animate={window.innerWidth > 738 ? isInView && "animate" : "animate"}
     >
       <motion.div className="textContainer" variants={variants}>
         <p>
@@ -58,61 +60,9 @@ const Services = () => {
         </div>
       </motion.div>
       <motion.div className="listContainer" variants={variants}>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum
-            voluptas, eos error vitae qui optio facilis fugiat atque tempore
-            eius dolor? Adipisci molestias sint in aliquid voluptatum tempore,
-            cupiditate inventore!
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-          variants={variants}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum
-            voluptas, eos error vitae qui optio facilis fugiat atque tempore
-            eius dolor? Adipisci molestias sint in aliquid voluptatum tempore,
-            cupiditate inventore!
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-          variants={variants}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum
-            voluptas, eos error vitae qui optio facilis fugiat atque tempore
-            eius dolor? Adipisci molestias sint in aliquid voluptatum tempore,
-            cupiditate inventore!
-          </p>
-          <button>Go</button>
-        </motion.div>
-        <motion.div
-          className="box"
-          whileHover={{ background: "lightgray", color: "black" }}
-          variants={variants}
-        >
-          <h2>Branding</h2>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum
-            voluptas, eos error vitae qui optio facilis fugiat atque tempore
-            eius dolor? Adipisci molestias sint in aliquid voluptatum tempore,
-            cupiditate inventore!
-          </p>
-          <button>Go</button>
-        </motion.div>
+        {serviceList.map((item, index) => (
+          <ServicesListItem key={index} title={item.title} desc={item.desc} />
+        ))}
       </motion.div>
     </motion.div>
   );

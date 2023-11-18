@@ -101,10 +101,11 @@
     display: flex;
     max-width: 1366px;
     margin: auto;
-
+    padding-bottom: 10vh;
     @include mobile {
       flex-direction: column;
       width: 100%;
+      padding-bottom: unset;
     }
 
     .box {
