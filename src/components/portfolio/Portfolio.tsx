@@ -45,12 +45,14 @@ const Single: React.FC<IPortfolioItem> = ({ title, img, desc, link }) => {
           <motion.div className="textContainer" style={{ y }}>
             <h2>{title}</h2>
             <p>{desc}</p>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
               disabled={link == undefined}
               onClick={() => window.open(link, "_blank")}
             >
               See Demo
-            </button>
+            </motion.button>
           </motion.div>
         </div>
       </div>
