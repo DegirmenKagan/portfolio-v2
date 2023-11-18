@@ -30,7 +30,7 @@ const Services = () => {
       variants={variants}
       initial="initial"
       ref={ref}
-      animate={isInView && "animate"}
+      animate={"animate"}
     >
       <motion.div className="textContainer" variants={variants}>
         <p>
@@ -69,6 +69,7 @@ const Services = () => {
             eius dolor? Adipisci molestias sint in aliquid voluptatum tempore,
             cupiditate inventore!
           </p>
+          <button>Go</button>
         </motion.div>
         <motion.div
           className="box"
@@ -82,6 +83,7 @@ const Services = () => {
             eius dolor? Adipisci molestias sint in aliquid voluptatum tempore,
             cupiditate inventore!
           </p>
+          <button>Go</button>
         </motion.div>
         <motion.div
           className="box"
@@ -95,6 +97,7 @@ const Services = () => {
             eius dolor? Adipisci molestias sint in aliquid voluptatum tempore,
             cupiditate inventore!
           </p>
+          <button>Go</button>
         </motion.div>
         <motion.div
           className="box"
@@ -108,6 +111,7 @@ const Services = () => {
             eius dolor? Adipisci molestias sint in aliquid voluptatum tempore,
             cupiditate inventore!
           </p>
+          <button>Go</button>
         </motion.div>
       </motion.div>
     </motion.div>
