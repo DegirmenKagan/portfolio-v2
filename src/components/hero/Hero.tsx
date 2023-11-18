@@ -32,6 +32,10 @@ const textVariants: Variants = {
   namehover: {
     letterSpacing: "3px",
   },
+  extraTitleHover: {
+    color: "red",
+    letterSpacing: "2px",
+  },
 };
 const heroVariants: Variants = {
   onhover: {
@@ -74,8 +78,12 @@ const Hero = () => {
           </motion.h2>
           <motion.h1 variants={textVariants}>Frontend Developer</motion.h1>
           <motion.h3 variants={textVariants}>
-            and also Youtube Content Creator
+            {"and also "}
+            <motion.b variants={textVariants} whileHover={"extraTitleHover"}>
+              Youtube Content Creator
+            </motion.b>
           </motion.h3>
+
           <motion.div variants={textVariants} className="buttons">
             <motion.button
               variants={textVariants}
