@@ -90,14 +90,14 @@ const Hero = () => {
               whileHover={"onhover"}
               whileTap={"ontap"}
             >
-              See the Latest Works
+              <a href={"#Portfolio"}>See the Latest Works</a>
             </motion.button>
             <motion.button
               variants={textVariants}
               whileHover={"onhover"}
               whileTap={"ontap"}
             >
-              Contact Me
+              <a href={"#Contact"}>Contact Me</a>
             </motion.button>
           </motion.div>
           <motion.img

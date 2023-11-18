@@ -69,10 +69,16 @@ const Contact = () => {
       whileInView={"animate"}
     >
       <motion.div className="textContainer" variants={variants}>
-        <motion.h1 variants={variants}>Let's get started!</motion.h1>
+        <motion.h1 variants={variants}>{"Let's get started!"}</motion.h1>
         <motion.div className="item" variants={variants}>
           <h2>Mail</h2>
-          <span>kagan@degirmenkagan.dev</span>
+          <motion.a
+            whileHover={{ scale: 1.1, color: "orange" }}
+            whileTap={{ scale: 0.9 }}
+            href={"mailto:kagan@degirmenkagan.dev"}
+          >
+            kagan@degirmenkagan.dev
+          </motion.a>
         </motion.div>
         <motion.div className="item" variants={variants}>
           <h2>Address</h2>
