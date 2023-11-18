@@ -35,8 +35,7 @@ const textVariants: Variants = {
 };
 const heroVariants: Variants = {
   onhover: {
-    scale: 1.1,
-    y: -70,
+    y: -30,
     rotate: -3,
     transition: {
       type: "spring",
