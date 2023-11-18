@@ -110,8 +110,10 @@ const Contact = () => {
         >
           <input type="text" required placeholder="Name" name="name" id="" />
           <input type="email" required placeholder="Email" name="email" id="" />
-          <textarea rows={8} placeholder="Message" name="message" />
-          <button
+          <textarea rows={8} required placeholder="Message" name="message" />
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             aria-disabled={loading}
             style={
               loading
@@ -124,9 +126,10 @@ const Contact = () => {
             }
           >
             {loading ? "Sending..." : "Submit"}
-          </button>
-          {error && "Error"}
-          {success && "Success"}
+          </motion.button>
+
+          {error && "Error occured."}
+          {success && "Mail sended."}
         </motion.form>
       </div>
     </motion.div>
