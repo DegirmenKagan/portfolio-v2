@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .cursor {
   width: 20px;
   height: 20px;
@@ -7,4 +9,8 @@
   position: fixed;
   z-index: 999;
   pointer-events: none;
+
+  @include mobile {
+    display: none;
+  }
 }
