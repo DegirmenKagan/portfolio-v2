@@ -50,7 +50,7 @@
         padding: 20px;
         border: none;
         background-color: orange;
-        cursor: pointer;
+        // cursor: pointer;
         font-weight: 500;
       }
 
@@ -58,7 +58,7 @@
       button[disabled] {
         background-color: gray;
         color: black;
-        cursor: progress;
+        // cursor: progress;
       }
     }
   }
