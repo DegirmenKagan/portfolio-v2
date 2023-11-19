@@ -7,7 +7,7 @@ const items: IPortfolioItem[] = [
   {
     id: 0,
     title: "fine-dine-react",
-    img: `${Constants.imagePath}/fine-dine-react.png`,
+    img: `${Constants.imagePath}/fine-dine-react.jpeg`,
     desc: "A react website that aimed to create modern, responsive restaurant site.",
     link: "https://github.com/DegirmenKagan/fine-dine-react",
   },
@@ -40,7 +40,7 @@ const Single: React.FC<IPortfolioItem> = ({ title, img, desc, link }) => {
       <div className="container">
         <div className="wrapper">
           <div className="imageContainer" ref={ref}>
-            <img src={img} alt={`${title}_img`} />
+            <img src={img} alt={`${title}_img`} loading="lazy" />
           </div>
           <motion.div className="textContainer" style={{ y }}>
             <h2>{title}</h2>

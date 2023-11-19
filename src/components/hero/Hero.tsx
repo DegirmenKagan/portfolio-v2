@@ -105,6 +105,7 @@ const Hero = () => {
             animate="scrollButton"
             src={`${Constants.imagePath}/scroll.png`}
             alt="scrollIcon"
+            loading="lazy"
           />
         </motion.div>
       </div>
@@ -123,6 +124,7 @@ const Hero = () => {
           whileHover={"onhover"}
           src={`${Constants.imagePath}/hero.webp`}
           alt="heroIcon"
+          loading="lazy"
         />
       </div>
     </div>
