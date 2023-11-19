@@ -11,6 +11,11 @@
     justify-content: space-between;
     height: 100%;
 
+    @include desktop {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
     @include mobile {
       justify-content: flex-end;
       padding: 20px;
@@ -18,7 +23,7 @@
 
     span {
       font-weight: bold;
-
+      font-size: 30px;
       @include mobile {
         display: none;
       }

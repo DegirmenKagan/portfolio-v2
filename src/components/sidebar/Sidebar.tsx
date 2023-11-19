@@ -23,13 +23,41 @@ const variants: Variants = {
   },
 };
 
+const backDropVariants: Variants = {
+  open: {
+    clipPath: "circle(3000px at 50px 50px)",
+    transition: {
+      type: "spring",
+      stiffness: 20,
+    },
+    opacity: 1,
+  },
+  closed: {
+    clipPath: "circle(30px at 50px 50px)",
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+    opacity: 0,
+  },
+};
+
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
   return (
     <motion.div className="sidebar" animate={open ? "open" : "closed"}>
-      <motion.div className="bg" variants={variants}>
-        <Links />
-      </motion.div>
+      <div className="container">
+        <motion.div className="bg" variants={variants}>
+          <Links />
+        </motion.div>
+        <motion.div
+          className="backdrop"
+          variants={backDropVariants}
+          onClick={() => setOpen((prev) => !prev)}
+        ></motion.div>
+      </div>
       <ToggleButton setOpen={setOpen} />
     </motion.div>
   );
