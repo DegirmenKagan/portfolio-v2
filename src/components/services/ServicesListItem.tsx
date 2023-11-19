@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { IServicesListItem } from "./ServiceData";
+import "./services.scss";
 
 const ServicesListItem = (props: IServicesListItem) => {
   return (

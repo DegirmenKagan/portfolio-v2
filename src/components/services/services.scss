@@ -116,6 +116,10 @@
       flex-direction: column;
       justify-content: space-between;
 
+      @include desktop {
+        padding: 25px;
+      }
+
       @include mobile {
         border: none;
         align-items: center;
@@ -126,6 +130,12 @@
       p {
         @include mobile {
           display: none;
+        }
+      }
+
+      h2 {
+        @include mobile {
+          text-align: center;
         }
       }
 

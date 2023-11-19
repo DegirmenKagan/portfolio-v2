@@ -59,7 +59,7 @@ const Services = () => {
             Business
           </h1>
           <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            What I Do?
+            <a href={"#Portfolio"}> What I Did?</a>
           </motion.button>
         </div>
       </motion.div>
