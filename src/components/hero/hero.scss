@@ -50,7 +50,9 @@
 
       .buttons {
         z-index: 997;
-        button {
+        display: flex;
+        flex-direction: row;
+        div {
           padding: 20px;
           border: 1px solid white;
           border-radius: 10px;

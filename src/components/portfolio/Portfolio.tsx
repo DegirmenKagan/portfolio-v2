@@ -16,7 +16,7 @@ const items: IPortfolioItem[] = [
     title: "digitalBusinessCard",
     img: `${Constants.imagePath}/digital-business-card.png`,
     desc: "Hello folks! I'll be improving this project in time. This is aimed to be a customizable business card.",
-    link: "https://github.com/DegirmenKagan/digitalBusinessCard",
+    // link: "https://github.com/DegirmenKagan/digitalBusinessCard",
   },
 ];
 
@@ -45,14 +45,17 @@ const Single: React.FC<IPortfolioItem> = ({ title, img, desc, link }) => {
           <motion.div className="textContainer" style={{ y }}>
             <h2>{title}</h2>
             <p>{desc}</p>
-            <motion.button
+            <motion.div
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              disabled={link == undefined}
-              onClick={() => window.open(link, "_blank")}
+              style={
+                link ? {} : { backgroundColor: "gray", pointerEvents: "none" }
+              }
             >
-              See Demo
-            </motion.button>
+              <a href={link} target="_blank">
+                See Demo
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </div>

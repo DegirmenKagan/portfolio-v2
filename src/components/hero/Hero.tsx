@@ -85,27 +85,26 @@ const Hero = () => {
           </motion.h3>
 
           <motion.div variants={textVariants} className="buttons">
-            <motion.button
+            <motion.div
               variants={textVariants}
               whileHover={"onhover"}
               whileTap={"ontap"}
             >
               <a href={"#Portfolio"}>See the Latest Works</a>
-            </motion.button>
-            <motion.button
+            </motion.div>
+            <motion.div
               variants={textVariants}
               whileHover={"onhover"}
               whileTap={"ontap"}
             >
               <a href={"#Contact"}>Contact Me</a>
-            </motion.button>
+            </motion.div>
           </motion.div>
           <motion.img
             variants={textVariants}
             animate="scrollButton"
             src={`${Constants.imagePath}/scroll.png`}
             alt="scrollIcon"
-            loading="lazy"
           />
         </motion.div>
       </div>
@@ -124,7 +123,6 @@ const Hero = () => {
           whileHover={"onhover"}
           src={`${Constants.imagePath}/hero.webp`}
           alt="heroIcon"
-          loading="lazy"
         />
       </div>
     </div>
