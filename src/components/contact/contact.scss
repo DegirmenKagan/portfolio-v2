@@ -8,6 +8,12 @@
   align-items: center;
   gap: 50px;
 
+  @include desktop {
+    width: 100%;
+    padding: 10px;
+    flex-direction: column;
+  }
+
   @include mobile {
     width: 100%;
     padding: 10px;
@@ -20,6 +26,13 @@
     flex-direction: column;
     gap: 40px;
 
+    @include desktop {
+      gap: 20px;
+      text-align: center;
+      align-items: center;
+      margin-top: 70px;
+    }
+
     @include mobile {
       gap: 20px;
       text-align: center;
@@ -30,6 +43,10 @@
     h1 {
       font-size: 100px;
       line-height: 88px;
+
+      @include desktop {
+        font-size: 36px;
+      }
 
       @include mobile {
         font-size: 36px;
@@ -43,6 +60,11 @@
   .formContainer {
     flex: 1;
     position: relative;
+
+    @include desktop {
+      padding: 50px;
+      width: 100%;
+    }
 
     @include mobile {
       padding: 50px;
@@ -69,6 +91,10 @@
         color: white;
         border-radius: 5px;
 
+        @include desktop {
+          padding: 10px;
+        }
+
         @include mobile {
           padding: 10px;
         }
@@ -78,8 +104,13 @@
         padding: 20px;
         border: none;
         background-color: orange;
+        border-radius: 5px;
         // cursor: pointer;
         font-weight: 500;
+
+        @include desktop {
+          padding: 10px;
+        }
 
         @include mobile {
           padding: 10px;
