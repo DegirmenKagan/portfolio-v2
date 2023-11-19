@@ -19,7 +19,12 @@
       justify-content: center;
       gap: 40px;
 
+      @include desktop {
+        padding-inline: 50px;
+      }
+
       @include mobile {
+        padding-inline: unset;
         height: 50%;
         width: 100%;
         gap: 20px;
@@ -33,6 +38,7 @@
         color: rebeccapurple;
         letter-spacing: 10px;
       }
+
       h1 {
         z-index: 997;
         font-size: 88px;
@@ -69,6 +75,13 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+
+    @include tablet {
+      height: 75%;
+      top: unset;
+      bottom: -5vh;
+      right: 5vw;
+    }
 
     @include mobile {
       height: 50%;
