@@ -2,6 +2,12 @@
 
 .portfolio {
   position: relative;
+
+  @include desktop {
+    display: flex;
+    flex-direction: column;
+  }
+
   .progress {
     position: sticky;
     top: 0;
@@ -30,6 +36,14 @@
     height: 100%;
     overflow: hidden;
 
+    @include desktop {
+      margin-top: 200px;
+    }
+
+    @include mobile {
+      margin-top: unset;
+    }
+
     .wrapper {
       max-width: 1366px;
       height: 100%;
@@ -39,7 +53,13 @@
       justify-content: center;
       gap: 50px;
 
+      @include desktop {
+        padding-inline: 50px;
+        flex-direction: column;
+      }
+
       @include mobile {
+        padding-inline: unset;
         flex-direction: column;
       }
 
@@ -56,6 +76,10 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
+
+          @include desktop {
+            object-fit: contain;
+          }
 
           @include mobile {
             object-fit: contain;
