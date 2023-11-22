@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./portfolio.scss";
 import { Constants } from "../../Constants";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
@@ -18,27 +18,21 @@ const Single: React.FC<IPortfolioItem> = ({ title, img, desc, link }) => {
     target: ref,
   });
 
-  function checkImage(imageSrc: string, good: () => void, bad: () => void) {
-    var img = new Image();
-    img.onload = good;
-    img.onerror = bad;
-    img.src = imageSrc;
-  }
+  const checkImageExists = async (imageSrc: string) => {
+    const response = await fetch(imageSrc, { method: "HEAD" });
+    return response.ok;
+  };
   const [visible, setVisible] = useState(false);
   const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
+  const loadImage = useCallback(async (img: string) => {
+    const imageExists = await checkImageExists(img);
+    setVisible(imageExists);
+  }, []);
+
   useEffect(() => {
-    console.log(img);
-    checkImage(
-      img || "",
-      () => {
-        setVisible(true);
-      },
-      () => {
-        setVisible(false);
-      }
-    );
-  }, [img]);
+    img && loadImage(img);
+  }, [img, loadImage]);
 
   return (
     <>

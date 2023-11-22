@@ -12,7 +12,6 @@ const useGitRepos = (username: string) => {
         const response = await axios.get(
           `https://api.github.com/users/${username}/repos?sort=updated&per_page=10&order=desc`
         );
-        console.log(response.data.map((repo: IGitRepo) => repo));
         setRepos(response.data);
       } catch (error) {
         console.error(error);
