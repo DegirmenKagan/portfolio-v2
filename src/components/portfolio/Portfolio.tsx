@@ -1,24 +1,8 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./portfolio.scss";
 import { Constants } from "../../Constants";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-
-const items: IPortfolioItem[] = [
-  {
-    id: 0,
-    title: "fine-dine-react",
-    img: `${Constants.imagePath}/fine-dine-react.jpeg`,
-    desc: "A react website that aimed to create modern, responsive restaurant site.",
-    link: "https://github.com/DegirmenKagan/fine-dine-react",
-  },
-  {
-    id: 1,
-    title: "digitalBusinessCard",
-    img: `${Constants.imagePath}/digital-business-card.png`,
-    desc: "Hello folks! I'll be improving this project in time. This is aimed to be a customizable business card.",
-    // link: "https://github.com/DegirmenKagan/digitalBusinessCard",
-  },
-];
+import useGitRepos from "../hooks/useGitRepos";
 
 interface IPortfolioItem {
   id: number;
@@ -34,32 +18,61 @@ const Single: React.FC<IPortfolioItem> = ({ title, img, desc, link }) => {
     target: ref,
   });
 
+  function checkImage(imageSrc: string, good: () => void, bad: () => void) {
+    var img = new Image();
+    img.onload = good;
+    img.onerror = bad;
+    img.src = imageSrc;
+  }
+  const [visible, setVisible] = useState(false);
   const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+
+  useEffect(() => {
+    console.log(img);
+    checkImage(
+      img || "",
+      () => {
+        setVisible(true);
+      },
+      () => {
+        setVisible(false);
+      }
+    );
+  }, [img]);
+
   return (
-    <section>
-      <div className="container">
-        <div className="wrapper">
-          <div className="imageContainer" ref={ref}>
-            <img src={img} alt={`${title}_img`} loading="lazy" />
+    <>
+      {visible ? (
+        <section>
+          <div className="container">
+            <div className="wrapper">
+              <div className="imageContainer" ref={ref}>
+                <img src={img} alt={`${title}_img`} loading="lazy" />
+              </div>
+              <motion.div className="textContainer" style={{ y }}>
+                <h2>{title}</h2>
+                <p>{desc}</p>
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  style={
+                    link
+                      ? {}
+                      : { backgroundColor: "gray", pointerEvents: "none" }
+                  }
+                >
+                  <a href={link} target="_blank">
+                    See In Github
+                  </a>
+                </motion.div>
+              </motion.div>
+            </div>
           </div>
-          <motion.div className="textContainer" style={{ y }}>
-            <h2>{title}</h2>
-            <p>{desc}</p>
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              style={
-                link ? {} : { backgroundColor: "gray", pointerEvents: "none" }
-              }
-            >
-              <a href={link} target="_blank">
-                See Demo
-              </a>
-            </motion.div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
+        </section>
+      ) : (
+        <></>
+      )}
+    </>
   );
 };
 
@@ -74,6 +87,23 @@ const Portfolio = () => {
     stiffness: 100,
     damping: 30,
   });
+
+  const { repos, loading } = useGitRepos("degirmenkagan");
+  const [items, setItems] = useState<IPortfolioItem[]>([]);
+
+  useEffect(() => {
+    if (!loading && repos) {
+      setItems(
+        (repos || []).map((repo) => ({
+          id: repo.id,
+          title: repo.name,
+          img: `${Constants.imagePath}/${repo.name}.jpeg`,
+          desc: repo.description,
+          link: repo.html_url,
+        }))
+      );
+    }
+  }, [repos]);
 
   return (
     <div className="portfolio" ref={ref}>
