@@ -46,19 +46,36 @@ const Single: React.FC<IPortfolioItem> = ({ title, img, desc, link }) => {
               <motion.div className="textContainer" style={{ y }}>
                 <h2>{title}</h2>
                 <p>{desc}</p>
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  style={
-                    link
-                      ? {}
-                      : { backgroundColor: "gray", pointerEvents: "none" }
-                  }
-                >
-                  <a href={link} target="_blank">
+                <div className="buttonContainer">
+                  <motion.div
+                    className="button"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    style={
+                      link
+                        ? {}
+                        : { backgroundColor: "gray", pointerEvents: "none" }
+                    }
+                    onClick={() =>
+                      window.open(`${Constants.projects}${title}`, "_blank")
+                    }
+                  >
+                    See Demo
+                  </motion.div>
+                  <motion.div
+                    className="button"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    style={
+                      link
+                        ? {}
+                        : { backgroundColor: "gray", pointerEvents: "none" }
+                    }
+                    onClick={() => window.open(link, "_blank")}
+                  >
                     See In Github
-                  </a>
-                </motion.div>
+                  </motion.div>
+                </div>
               </motion.div>
             </div>
           </div>

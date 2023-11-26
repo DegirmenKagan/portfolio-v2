@@ -89,15 +89,17 @@ const Hero = () => {
               variants={textVariants}
               whileHover={"onhover"}
               whileTap={"ontap"}
+              onClick={() => (window.location.href = "#Portfolio")}
             >
-              <a href={"#Portfolio"}>See the Latest Works</a>
+              See the Latest Works
             </motion.div>
             <motion.div
               variants={textVariants}
               whileHover={"onhover"}
               whileTap={"ontap"}
+              onClick={() => (window.location.href = "#Contact")}
             >
-              <a href={"#Contact"}>Contact Me</a>
+              Contact Me
             </motion.div>
           </motion.div>
           <motion.img

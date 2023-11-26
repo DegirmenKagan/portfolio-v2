@@ -4,4 +4,5 @@ export var Constants = {
   linkedin: "https://www.linkedin.com/in/degirmenkagan/",
   instagram: "https://www.instagram.com/kagifer/",
   imagePath: "/images",
+  projects: "https://projects.degirmenkagan.dev/",
 };

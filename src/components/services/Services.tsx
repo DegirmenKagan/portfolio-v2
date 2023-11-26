@@ -58,8 +58,12 @@ const Services = () => {
             <motion.b whileHover={{ color: "orange" }}>For Your</motion.b>
             Business
           </h1>
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            <a href={"#Portfolio"}> What I Did?</a>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => (window.location.href = "#Portfolio")}
+          >
+            What I Did?
           </motion.button>
         </div>
       </motion.div>
