@@ -45,7 +45,7 @@ const Single: React.FC<IPortfolioItem> = ({ title, img, desc, link }) => {
               </div>
               <motion.div className="textContainer" style={{ y }}>
                 <h2>{title}</h2>
-                <p>{desc}</p>
+                <p>{desc ?? ""}</p>
                 <div className="buttonContainer">
                   <motion.div
                     className="button"
