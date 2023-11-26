@@ -5,4 +5,5 @@ export var Constants = {
   instagram: "https://www.instagram.com/kagifer/",
   imagePath: "/images",
   projects: "https://projects.degirmenkagan.dev/",
+  resume: "/KAGAN_DEGIRMEN_EU_CV.pdf",
 };

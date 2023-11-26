@@ -101,6 +101,19 @@ const Hero = () => {
             >
               Contact Me
             </motion.div>
+            <motion.div
+              variants={textVariants}
+              whileHover={"onhover"}
+              whileTap={"ontap"}
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href = Constants.resume;
+                link.download = "KaganDegirmenResume.pdf";
+                link.click();
+              }}
+            >
+              Download Resume
+            </motion.div>
           </motion.div>
           <motion.img
             variants={textVariants}
