@@ -109,6 +109,14 @@ const Hero = () => {
             alt="scrollIcon"
           />
         </motion.div>
+        <div className="imageContainer">
+          <motion.img
+            variants={heroVariants}
+            whileHover={"onhover"}
+            src={`${Constants.imagePath}/hero.webp`}
+            alt="heroIcon"
+          />
+        </div>
       </div>
       <motion.div
         className="slidingTextContainer"
@@ -118,15 +126,6 @@ const Hero = () => {
       >
         Developer, Video Editor, Photographer, Artist
       </motion.div>
-
-      <div className="imageContainer">
-        <motion.img
-          variants={heroVariants}
-          whileHover={"onhover"}
-          src={`${Constants.imagePath}/hero.webp`}
-          alt="heroIcon"
-        />
-      </div>
     </div>
   );
 };
