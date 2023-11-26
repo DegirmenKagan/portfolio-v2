@@ -18,7 +18,7 @@
     font-size: 36px;
 
     @include mobile {
-      padding-top: calc(100vh - 100px);
+      padding-top: calc(100dvh - 100px);
       font-size: 24px;
     }
 
