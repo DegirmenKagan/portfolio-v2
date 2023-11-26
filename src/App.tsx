@@ -9,7 +9,7 @@ import Cursor from "./components/cursor/Cursor";
 function App() {
   return (
     <div>
-      <Cursor />
+      {/* <Cursor /> */}
       <section id="Homepage">
         <Navbar />
         <Hero />

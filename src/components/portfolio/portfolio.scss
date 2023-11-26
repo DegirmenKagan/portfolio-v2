@@ -125,7 +125,7 @@
           width: 150px;
           display: flex;
           justify-content: center;
-          // cursor: pointer;
+          cursor: pointer;
           z-index: 30;
         }
 
@@ -133,7 +133,7 @@
         button[disabled] {
           background-color: gray;
           color: black;
-          // cursor: not-allowed;
+          cursor: not-allowed;
         }
       }
       .buttonContainer {

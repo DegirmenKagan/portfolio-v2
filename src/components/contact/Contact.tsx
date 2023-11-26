@@ -134,7 +134,7 @@ const Contact = () => {
                 ? {
                     backgroundColor: "gray",
                     color: "black",
-                    // cursor: "progress",
+                    cursor: "progress",
                   }
                 : undefined
             }

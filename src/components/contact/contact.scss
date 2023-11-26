@@ -105,7 +105,7 @@
         border: none;
         background-color: orange;
         border-radius: 5px;
-        // cursor: pointer;
+        cursor: pointer;
         font-weight: 500;
 
         @include desktop {
@@ -121,7 +121,7 @@
       button[disabled] {
         background-color: gray;
         color: black;
-        // cursor: progress;
+        cursor: progress;
       }
     }
   }
