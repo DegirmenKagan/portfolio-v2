@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import "./portfolio.scss";
 import { Constants } from "../../Constants";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import useGitRepos from "../hooks/useGitRepos";
 
 interface IPortfolioItem {
@@ -14,16 +14,11 @@ interface IPortfolioItem {
 const Single: React.FC<IPortfolioItem> = ({ title, img, desc, link }) => {
   const ref = useRef(null);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-  });
-
   const checkImageExists = async (imageSrc: string) => {
     const response = await fetch(imageSrc, { method: "HEAD" });
     return response.ok;
   };
   const [visible, setVisible] = useState(false);
-  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
   const loadImage = useCallback(async (img: string) => {
     const imageExists = await checkImageExists(img);
@@ -43,7 +38,7 @@ const Single: React.FC<IPortfolioItem> = ({ title, img, desc, link }) => {
               <div className="imageContainer" ref={ref}>
                 <img src={img} alt={`${title}_img`} loading="lazy" />
               </div>
-              <motion.div className="textContainer" style={{ y }}>
+              <motion.div className="textContainer">
                 <h2>{title}</h2>
                 <p>{desc ?? ""}</p>
                 <div className="buttonContainer">
