@@ -76,7 +76,9 @@ const Hero = () => {
           <motion.h2 variants={textVariants} whileHover={"namehover"}>
             KAĞAN DEĞİRMEN
           </motion.h2>
-          <motion.h1 variants={textVariants}>Frontend Developer</motion.h1>
+          <motion.h1 variants={textVariants}>
+            Frontend & iOS Developer
+          </motion.h1>
           <motion.h3 variants={textVariants}>
             {"and also "}
             <motion.b variants={textVariants} whileHover={"extraTitleHover"}>

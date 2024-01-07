@@ -10,7 +10,7 @@ const useGitRepos = (username: string) => {
     const fetchRepos = async () => {
       try {
         const response = await axios.get(
-          `https://api.github.com/users/${username}/repos?sort=starsper_page=10&order=desc`
+          `https://api.github.com/users/${username}/repos?sort=stars&order=desc`
         );
         setRepos(response.data);
       } catch (error) {
