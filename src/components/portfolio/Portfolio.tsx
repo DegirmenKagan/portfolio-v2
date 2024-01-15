@@ -10,16 +10,10 @@ interface IPortfolioItem {
   img?: string;
   desc?: string;
   link?: string;
-  language?: string;
 }
-const Single: React.FC<IPortfolioItem> = ({
-  title,
-  img,
-  desc,
-  link,
-  language,
-}) => {
+const Single: React.FC<IPortfolioItem> = ({ title, img, desc, link }) => {
   const ref = useRef(null);
+
   const checkImageExists = async (imageSrc: string) => {
     const response = await fetch(imageSrc, { method: "HEAD" });
     return response.ok;
@@ -53,7 +47,7 @@ const Single: React.FC<IPortfolioItem> = ({
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     style={
-                      link && language?.toLocaleLowerCase() !== "swift"
+                      link
                         ? {}
                         : { backgroundColor: "gray", pointerEvents: "none" }
                     }
@@ -102,55 +96,25 @@ const Portfolio = () => {
 
   const { repos, loading } = useGitRepos("degirmenkagan");
   const [items, setItems] = useState<IPortfolioItem[]>([]);
-  const [IOSVisible, setIOSVisible] = useState(false);
 
   useEffect(() => {
     if (!loading && repos) {
       setItems(
-        (repos || [])
-          .filter((x) =>
-            x.language
-              ?.toLocaleLowerCase()
-              ?.includes(IOSVisible ? "swift" : "script")
-          )
-          .map((repo) => ({
-            id: repo.id,
-            title: repo.name,
-            img: `${Constants.imagePath}/${repo.name}.jpeg`,
-            desc: repo.description,
-            link: repo.html_url,
-            language: repo.language,
-          }))
+        (repos || []).map((repo) => ({
+          id: repo.id,
+          title: repo.name,
+          img: `${Constants.imagePath}/${repo.name}.jpeg`,
+          desc: repo.description,
+          link: repo.html_url,
+        }))
       );
     }
-  }, [repos, IOSVisible]);
+  }, [repos]);
 
   return (
     <div className="portfolio" ref={ref}>
       <div className="progress">
-        <div className="progressTitle">
-          <h1>Featured Works</h1>
-          <motion.a
-            className="progressButton"
-            href="#PortfolioItems"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setIOSVisible(true)}
-            style={{ backgroundColor: IOSVisible ? "orange" : "gray" }}
-          >
-            iOS
-          </motion.a>
-          <motion.a
-            className="progressButton"
-            href="#PortfolioItems"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setIOSVisible(false)}
-            style={{ backgroundColor: !IOSVisible ? "orange" : "gray" }}
-          >
-            Frontend
-          </motion.a>
-        </div>
+        <h1>Featured Works</h1>
         <motion.div style={{ scaleX }} className="progressBar"></motion.div>
       </div>
       {items.map((item) => (
@@ -161,7 +125,6 @@ const Portfolio = () => {
           img={item.img}
           desc={item.desc}
           link={item.link}
-          language={item.language}
         />
       ))}
     </div>

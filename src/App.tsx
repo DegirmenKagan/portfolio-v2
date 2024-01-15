@@ -22,9 +22,7 @@ function App() {
       <section id="Portfolio">
         <Parallax type="portfolio" />
       </section>
-      <section id="PortfolioItems">
-        <Portfolio />
-      </section>
+      <Portfolio />
       <section id="Contact">
         <Contact />
       </section>
