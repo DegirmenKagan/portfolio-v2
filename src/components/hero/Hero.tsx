@@ -126,7 +126,7 @@ const Hero = () => {
           <motion.img
             variants={heroVariants}
             whileHover={"onhover"}
-            src={`${Constants.imagePath}/hero.webp`}
+            src={`${Constants.imagePath}/profile.png`}
             alt="heroIcon"
           />
         </div>
